@@ -1,0 +1,19 @@
+[project]
+name = "mirth"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "adaptix>=3.0.0b11",
+    "aiogram-dialog>=2.4.0",
+    "dishka>=1.6.0",
+    "dynaconf>=3.2.11",
+    "faststream[nats]>=0.5.46",
+    "structlog>=25.4.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.3",
+]
