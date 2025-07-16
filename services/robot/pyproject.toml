@@ -10,7 +10,10 @@ dependencies = [
     "dishka>=1.6.0",
     "dynaconf>=3.2.11",
     "faststream[nats]>=0.5.46",
+    "lz4>=4.4.4",
+    "ormsgpack>=1.10.0",
     "structlog>=25.4.0",
+    "sulguk>=0.8.0",
 ]
 
 [dependency-groups]
