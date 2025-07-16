@@ -1,5 +1,9 @@
+<div align="center">
+
 # Mirth
 🌸 An elegant order processing system based on **event-driven architecture (EDA) with modular microservices**
+
+</div>
 
 ## ✨ Features
 
@@ -8,8 +12,9 @@
 ## 🏛️ Architecture
 ```mermaid
   graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+    User --> Bot;
+    User --> WebApp;
+    Bot --> NATS;
+    WebApp --> NATS;
+    NATS --> Database;
 ```
