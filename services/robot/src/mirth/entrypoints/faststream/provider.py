@@ -4,6 +4,7 @@ from faststream.nats import NatsBroker
 
 from src.mirth.external.settings import Settings
 
+
 class FaststreamProvider(Provider):
     @provide(scope=Scope.APP)
     async def get_broker(self, settings: Settings) -> NatsBroker:
