@@ -18,6 +18,7 @@
             python
             pkgs.uv
             pkgs.go-task
+            pkgs.elixir
           ];
 
           shellHook = ''

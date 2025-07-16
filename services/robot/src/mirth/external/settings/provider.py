@@ -1,6 +1,6 @@
 from dishka import provide, Scope, Provider
 
-from src.mirth.external.settings import Settings, NatsSettings
+from src.mirth.external.settings import Settings, NatsSettings, BotSettings
 
 
 class SettingsProvider(Provider):
@@ -17,3 +17,7 @@ class SettingsProvider(Provider):
     @provide
     def get_nats_config(self) -> NatsSettings:
         return self.settings.nats
+
+    @provide
+    def get_bot_config(self) -> BotSettings:
+        return self.settings.bot
