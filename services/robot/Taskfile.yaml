@@ -2,6 +2,6 @@ version: 3
 
 tasks:
   run:
-    cmd: uv run python -m src.mirth.entrypoints
+    cmd: rye run python -m src.mirth.entrypoints
   ruff:
-    cmd: uv run ruff format src
+    cmd: rye run ruff format src

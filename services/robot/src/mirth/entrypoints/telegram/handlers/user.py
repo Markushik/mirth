@@ -7,13 +7,13 @@ from dishka.integrations.aiogram import FromDishka, inject
 from src.mirth.entrypoints.telegram.dialogs.main_menu.states import MainMenu
 from dishka.integrations.aiogram import FromDishka, inject
 from faststream.nats import NatsBroker
+from src.mirth.application.interactors import UserExist
+from src.mirth.application.mediator import Mediator
 
+# todo: rewrite mediator pattern
 @inject
-async def command_start(message: Message, dialog_manager: DialogManager, broker: FromDishka[NatsBroker]) -> None:
-    print(broker)
-    await broker.connect()
+async def command_start(_, dialog_manager: DialogManager, mediator: FromDishka[Mediator]) -> None:
     await dialog_manager.start(state=MainMenu.START)
-    await broker.publish("hello", "test.data")
 
 
 def setup() -> Router:

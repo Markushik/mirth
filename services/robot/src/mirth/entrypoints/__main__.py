@@ -8,11 +8,14 @@ from src.mirth.external.logging import get_logger
 from src.mirth.external.di import get_container
 from faststream import FastStream
 
+
+
 # split locales on folders
 # sulguk
 # i18n
 # nats adapter
 # di logger
+# pre-commit
 
 async def main() -> None:
     logger = get_logger()
