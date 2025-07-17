@@ -6,7 +6,6 @@
 ## ✨ Features
 
 ## 📦 Installation
-<div>
 ### 🦭 Podman
 This Podman image published on Docker Hub.
 
@@ -14,7 +13,6 @@ This Podman image published on Docker Hub.
 
 ### Default
 `1` Clone the repository
-</div>
 
 
 ## 🏛️ Architecture
