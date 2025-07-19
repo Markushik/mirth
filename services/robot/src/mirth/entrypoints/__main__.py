@@ -6,21 +6,15 @@ from pprint import pprint
 from src.mirth.external.settings import get_settings
 from src.mirth.external.logging import get_logger
 from src.mirth.external.di import get_container
+from src.mirth.external.fluent import get_locales
 from faststream import FastStream
-
-
-
-# split locales on folders
-# sulguk
-# i18n
-# nats adapter
-# di logger
-# pre-commit
 
 async def main() -> None:
     logger = get_logger()
     settings = get_settings()
-    container: AsycnContainer = get_container(settings)
+    locales = get_locales()
+
+    container: AsycnContainer = get_container(settings, locales)
 
     bot = await container.get(Bot)
     dispatcher = await container.get(Dispatcher)

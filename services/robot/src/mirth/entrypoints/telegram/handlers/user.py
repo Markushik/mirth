@@ -15,12 +15,12 @@ from src.mirth.application.transport import UserTransport
 # todo: rewrite mediator pattern
 @inject
 async def command_start(message: Message, dialog_manager: DialogManager, mediator: FromDishka[Mediator]) -> None:
-    user_transport = UserTransport(telegram_id=message.from_user.id)
-    contract = UserExistsContract(telegram_id=message.from_user.id)
-    print(contract)
+    #user_transport = UserTransport(telegram_id=message.from_user.id)
+    #contract = UserExistsContract(telegram_id=message.from_user.id)
+    #print(contract)
 
-    user_exists = await mediator.send(contract)
-    print(user_exists)
+    #user_exists = await mediator.send(contract)
+    #print(user_exists)
     
     await dialog_manager.start(state=MainMenu.START)
 

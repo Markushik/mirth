@@ -6,20 +6,39 @@
 </div>
 
 ## ✨ Features
+- Automatic generates reports
+- ...
 
 ## 📦 Installation
+> \[! WARNING]
+>
+> Please fill data `.sectrets.toml` which must locates in there.
 
 ### 🦭 Podman
 This Podman image is published on Docker Hub.
+`1` Pull from Docker Hub
+```
+podman pull ...
+```
+`2` Bring up containers
+```
+podman-compose up
+```
 
 ### ❄️ Nix
-
-### Default
-`1` Clone the repository
+`1` Clone this Repository via Git
+```shell
+git clone https://github.com/Markushik/mirth.git
+```
+`2` Build up Nix environment
+```shell
+nix develop
+```
+In every services we can see file `Taskfile` which provides more flexible interaction
 
 ## 🏛️ Architecture
 ```mermaid
-  graph TD;
+graph TD;
     User --> Bot;
     User --> WebApp;
     Bot --> NATS;
@@ -28,6 +47,6 @@ This Podman image is published on Docker Hub.
 ```
 
 ### Tree Structure
-```sh
-    Hello!
+```shell
+Hello!
 ```
