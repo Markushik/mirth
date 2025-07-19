@@ -10,31 +10,36 @@
 - ...
 
 ## 📦 Installation
-> \[! WARNING]
->
+> [!WARNING]  
 > Please fill data `.sectrets.toml` which must locates in there.
 
 ### 🦭 Podman
 This Podman image is published on Docker Hub.
+
 `1` Pull from Docker Hub
 ```
 podman pull ...
 ```
+
 `2` Bring up containers
 ```
 podman-compose up
 ```
 
 ### ❄️ Nix
+
 `1` Clone this Repository via Git
 ```shell
 git clone https://github.com/Markushik/mirth.git
 ```
+
 `2` Build up Nix environment
 ```shell
 nix develop
 ```
-In every services we can see file `Taskfile` which provides more flexible interaction
+
+> [!TIP]
+> In every services we can see file `Taskfile` which provides more flexible interaction
 
 ## 🏛️ Architecture
 ```mermaid
