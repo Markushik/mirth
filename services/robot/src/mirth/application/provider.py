@@ -1,6 +1,5 @@
 from dishka import provide, Provider, Scope
 
-from src.mirth.application.interactors import UserExist
 from src.mirth.application.mediator import Mediator
 from src.mirth.application.registry import setup_interactors
 

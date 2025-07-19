@@ -1,7 +1,5 @@
-<p style="text-align: center;">
 # Mirth  
 🌸 An elegant order processing system based on **event-driven architecture (EDA) with modular microservices**
-</p>
 
 ## ✨ Features
 
@@ -13,7 +11,7 @@ This Podman image is published on Docker Hub.
 ### ❄️ Nix
 
 ### Default
-1. Clone the repository
+`1` Clone the repository
 
 ## 🏛️ Architecture
 ```mermaid
@@ -23,3 +21,6 @@ This Podman image is published on Docker Hub.
     Bot --> NATS;
     WebApp --> NATS;
     NATS --> Database;
+```
+
+### Tree Structure

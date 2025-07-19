@@ -1,6 +1,7 @@
-from .user import UserExist 
+from .user import UserExistsInteractor 
 
+__all__ = ["UserExistsInteractor"]
 
-def get_interactors() -> list:
-    return [UserExist]
+#def get_interactors() -> list:
+#    return [UserExistsInteractor]
 

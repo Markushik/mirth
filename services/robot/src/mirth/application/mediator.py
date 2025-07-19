@@ -1,14 +1,19 @@
-from typing import Dict, Type, Callable, Any
+from typing import Type, TypeVar, Callable, Awaitable, Dict, Any
+
+T = TypeVar("T")
 
 class Mediator:
     def __init__(self):
-        self.handlers: Dict[Type, Callable[..., Any]] = {}
+        self._handlers: Dict[Type[Any], Any] = {}
 
-    def include_interactor(self, interactor_type: Type, handler: Callable):
-        self.handlers[interactor_type] = handler
+    def register(self, contract_type: Type[T], handler: Any):
+        self._handlers[contract_type] = handler
 
-    async def send(self, interactor: Any, *args, **kwargs) -> Any:
-        handler = self.handlers.get(type(interactor))
-        if not handler:
-            raise ValueError(f"No handler for {type(interactor)}")
-        return await handler(interactor, *args, **kwargs)
+    async def send(self, contract: T) -> Any:
+        contract_type = type(contract)
+        handler = self._handlers.get(contract_type)
+
+        if handler is None:
+            raise ValueError(f"No handler registered for contract type: {contract_type}")
+
+        return await handler(contract)

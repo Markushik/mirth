@@ -30,6 +30,7 @@ class DispatcherProvider(Provider):
         setup_dishka(
             container=container, router=dispatcher
         )
+        # setup_middlewares(dispatcher)
         setup_routers(dispatcher)
         setup_dialogs(dispatcher)
 

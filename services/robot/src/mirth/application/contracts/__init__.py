@@ -1,3 +1,4 @@
 from .interactor import Interactor
-
-__all__ = ["Interactor"]
+from .user import UserExistsContract
+ 
+__all__ = ["Interactor", "UserExistsContract"]
