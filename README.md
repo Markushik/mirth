@@ -62,6 +62,8 @@ Hello!
 ```
 
 ## ToDo
-[ ] Integration `etcd` in system
-[ ] Add debug tools in project
-[ ] Integration `SeaweedFS` in system
+- [ ] Integration `etcd` in system
+- [ ] Add debug tools in project
+- [ ] Integration `SeaweedFS` in system
+- [ ] Add `sulguk` in Telgram Bot
+- [ ] Config `pre-commit`, CI

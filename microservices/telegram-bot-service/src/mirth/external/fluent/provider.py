@@ -13,4 +13,3 @@ class FluentProvider(Provider):
     def get_locale(self) -> Locale:
         print(self.locale["en"])
         return self.locale["en"]
-
