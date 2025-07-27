@@ -52,16 +52,13 @@ graph TD;
 ```
 
 ### Tree Structure
-<<<<<<< HEAD
 ```shell
-Hello!
-=======
-```sh
     Some structure
->>>>>>> 31b31b4 (new arch + add pattern mediator)
 ```
 
-## ToDo
-[ ] Integration `etcd` in system
-[ ] Add debug tools in project
-[ ] Integration `SeaweedFS` in system
+## ☑️ ToDo
+- [ ] Integration `etcd` in system
+- [ ] Add debug tools in project
+- [ ] Integration `SeaweedFS` in system
+- [ ] Add `sulguk` in Telgram Bot
+- [ ] Config `pre-commit`, CI
