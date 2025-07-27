@@ -1,0 +1,7 @@
+version: 3
+
+tasks:
+  run:
+    cmd: rye run python -m src.mirth.entrypoints
+  ruff:
+    cmd: rye run ruff format src

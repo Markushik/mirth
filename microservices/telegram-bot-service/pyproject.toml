@@ -1,0 +1,38 @@
+[project]
+name = "robot"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Markushik", email = "zemly@duck.com" }
+]
+dependencies = [
+    "adaptix>=3.0.0b11",
+    "aiogram-dialog>=2.4.0",
+    "dishka>=1.6.0",
+    "dynaconf>=3.2.11",
+    "faststream[nats]>=0.5.46",
+    "lz4>=4.4.4",
+    "ormsgpack>=1.10.0",
+    "structlog>=25.4.0",
+    "sulguk>=0.8.0",
+    "fluent-runtime>=0.4.0",
+]
+readme = "README.md"
+requires-python = ">= 3.13"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.12.3",
+    "mypy>=1.17.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/robot"]
