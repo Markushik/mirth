@@ -9,9 +9,12 @@ from src.mirth.external.di import get_container
 from src.mirth.external.fluent import get_locales
 from faststream import FastStream
 
+from pprint import pprint
+
 
 async def main() -> None:
     locales = get_locales()
+    pprint(locales)
     logger = get_logger()
     settings = get_settings()
 

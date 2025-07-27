@@ -5,21 +5,35 @@ from aiogram_dialog import DialogManager, StartMode
 from dishka.integrations.aiogram import FromDishka, inject
 
 from src.mirth.entrypoints.telegram.dialogs.main_menu.states import MainMenu
-from dishka.integrations.aiogram import FromDishka, inject
 from faststream.nats import NatsBroker
 from src.mirth.application.interactors import UserExistsInteractor
 from src.mirth.application.contracts import UserExistsContract
 from src.mirth.application.mediator import Mediator
 from src.mirth.application.transport import UserTransport
 
+from faststream.nats import NatsBroker
+from ormsgpack import packb, unpackb
 
-# todo: rewrite mediator pattern
+from pprint import pprint
+import lz4.frame
+
 @inject
-async def command_start(message: Message, dialog_manager: DialogManager, mediator: FromDishka[Mediator]) -> None:
+async def command_start(
+    message: Message, dialog_manager: DialogManager, mediator: FromDishka[Mediator], broker: FromDishka[NatsBroker]
+) -> None:
     user_transport = UserTransport(telegram_id=message.from_user.id)
 
+    request = await broker.request(
+        #lz4.frame.compress(
+            packb({"id": message.from_user.id, "name": "Mark"}), 
+        #), 
+        subject="test.user"
+    ) # TODO: replace this in application layer
+
+    pprint(request)
+
     contract = UserExistsContract(telegram_id=12345)
-    result = await mediator.send(contract) 
+    result = await mediator.send(contract)
 
     await dialog_manager.start(state=MainMenu.START)
 

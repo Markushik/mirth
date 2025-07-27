@@ -2,6 +2,7 @@ from dishka import Provider, provide, Scope
 
 from src.mirth.external.fluent.model import Locale
 
+
 class FluentProvider(Provider):
     scope = Scope.APP
 

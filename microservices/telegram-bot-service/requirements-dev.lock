@@ -86,7 +86,7 @@ pydantic-core==2.33.2
     # via pydantic
 pytz==2025.2
     # via fluent-runtime
-ruff==0.12.3
+ruff==0.12.5
 sniffio==1.3.1
     # via anyio
 structlog==25.4.0

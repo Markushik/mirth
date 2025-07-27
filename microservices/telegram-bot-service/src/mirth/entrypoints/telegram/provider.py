@@ -11,6 +11,7 @@ from src.mirth.entrypoints.telegram.registry import setup_routers, setup_middlew
 from dishka.integrations.aiogram import setup_dishka
 from dishka import AsyncContainer, provide, Provider, Scope
 
+
 class DispatcherProvider(Provider):
     scope = Scope.APP
 
@@ -27,9 +28,7 @@ class DispatcherProvider(Provider):
     ) -> Dispatcher:
         dispatcher = Dispatcher(storage=storage)
 
-        setup_dishka(
-            container=container, router=dispatcher
-        )
+        setup_dishka(container=container, router=dispatcher)
         setup_middlewares(dispatcher)
         setup_routers(dispatcher)
         setup_dialogs(dispatcher)

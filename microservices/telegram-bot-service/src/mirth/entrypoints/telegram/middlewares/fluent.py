@@ -5,6 +5,10 @@ from aiogram.types import CallbackQuery, Message, TelegramObject
 from fluent.runtime import FluentLocalization
 
 
+from src.mirth.entrypoints.telegram.dialogs.main_menu.states import MainMenu
+from src.mirth.external.fluent import Locale
+
+
 class FluentMiddleware(BaseMiddleware):
     async def __call__(
         self,
@@ -12,8 +16,10 @@ class FluentMiddleware(BaseMiddleware):
         event: Union[Message, CallbackQuery],
         data: dict[str, Any],
     ) -> Any:
-        dishka = data["dishka_container"]
+        container = data["dishka_container"]
 
-        print(dishka)
+        locale = await container.get(Locale)
+
+        data["aiogd_i18n_format"] = locale.format_value
 
         return await handler(event, data)
