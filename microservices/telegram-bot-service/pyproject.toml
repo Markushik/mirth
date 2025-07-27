@@ -16,6 +16,7 @@ dependencies = [
     "structlog>=25.4.0",
     "sulguk>=0.8.0",
     "fluent-runtime>=0.4.0",
+    "zstd>=1.5.7.2",
 ]
 readme = "README.md"
 requires-python = ">= 3.13"

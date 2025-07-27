@@ -15,7 +15,7 @@ from faststream.nats import NatsBroker
 from ormsgpack import packb, unpackb
 
 from pprint import pprint
-import lz4.frame
+from zstd import compress
 
 @inject
 async def command_start(
@@ -24,11 +24,12 @@ async def command_start(
     user_transport = UserTransport(telegram_id=message.from_user.id)
 
     request = await broker.request(
-        #lz4.frame.compress(
+        compress(
             packb({"id": message.from_user.id, "name": "Mark"}), 
-        #), 
+        ), 
         subject="test.user"
-    ) # TODO: replace this in application layer
+    ) 
+    # TODO: replace this in application layer
 
     pprint(request)
 

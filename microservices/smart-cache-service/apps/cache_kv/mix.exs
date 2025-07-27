@@ -26,7 +26,7 @@ defmodule KeyValue.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:nimble_lz4, "~> 1.1.0"},
+      {:ezstd, git: "https://github.com/silviucpp/ezstd"},
       {:gnat, "~> 1.10.2"},
       {:msgpax, "~> 2.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},
