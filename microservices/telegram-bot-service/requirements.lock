@@ -29,6 +29,7 @@ annotated-types==0.7.0
 anyio==4.9.0
     # via fast-depends
     # via faststream
+    # via httpx
 attrs==25.3.0
     # via aiohttp
     # via fluent-runtime
@@ -38,6 +39,8 @@ cachetools==5.5.2
     # via aiogram-dialog
 certifi==2025.7.14
     # via aiogram
+    # via httpcore
+    # via httpx
 dishka==1.6.0
     # via robot
 dynaconf==3.2.11
@@ -53,8 +56,15 @@ fluent-syntax==0.19.0
 frozenlist==1.7.0
     # via aiohttp
     # via aiosignal
+h11==0.16.0
+    # via httpcore
+httpcore==1.0.9
+    # via httpx
+httpx==0.28.1
+    # via robot
 idna==3.10
     # via anyio
+    # via httpx
     # via yarl
 jinja2==3.1.6
     # via aiogram-dialog

@@ -6,11 +6,14 @@ from src.mirth.entrypoints.telegram import BotProvider, DispatcherProvider
 from src.mirth.application import MediatorProvider
 from src.mirth.external.fluent import FluentProvider
 
+from src.mirth.external.etcd import EtcdProvider
+
 
 def get_container(settings: Settings, locales) -> AsyncContainer:
     container = make_async_container(
         *[
             SettingsProvider(settings),
+            EtcdProvider(),
             FluentProvider(locales),
             MediatorProvider(),
             FaststreamProvider(),

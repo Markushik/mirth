@@ -13,6 +13,13 @@ class NatsSettings:
 
 
 @dataclass
+class EtcdSettings:
+    host: str
+    port: int
+
+
+@dataclass
 class Settings:
     bot: BotSettings
     nats: NatsSettings
+    etcd: EtcdSettings

@@ -57,8 +57,9 @@ graph TD;
 ```
 
 ## ☑️ ToDo
-- [ ] Integration `etcd` in system
+- [X] Integration `etcd` in system
 - [ ] Add debug tools in project
 - [ ] Integration `SeaweedFS` in system
-- [ ] Add `sulguk` in Telgram Bot
+- [X] Add `sulguk` in Telgram Bot
+- [ ] Impl script to parse .ftl and interg. to HTML templates
 - [ ] Config `pre-commit`, CI

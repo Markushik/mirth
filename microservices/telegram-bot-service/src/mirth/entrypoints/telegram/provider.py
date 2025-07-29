@@ -10,7 +10,7 @@ from aiogram_dialog import setup_dialogs
 from src.mirth.entrypoints.telegram.registry import setup_routers, setup_middlewares
 from dishka.integrations.aiogram import setup_dishka
 from dishka import AsyncContainer, provide, Provider, Scope
-
+from sulguk import AiogramSulgukMiddleware
 
 class DispatcherProvider(Provider):
     scope = Scope.APP
@@ -43,4 +43,5 @@ class BotProvider(Provider):
         settings: Settings,
     ) -> AsyncIterable[Bot]:
         async with Bot(token=settings.bot.token) as bot:
+            #bot.session.middleware(AiogramSulgukMiddleware())
             yield bot

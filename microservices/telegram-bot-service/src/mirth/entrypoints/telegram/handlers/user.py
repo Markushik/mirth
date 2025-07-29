@@ -11,30 +11,15 @@ from src.mirth.application.contracts import UserExistsContract
 from src.mirth.application.mediator import Mediator
 from src.mirth.application.transport import UserTransport
 
-from faststream.nats import NatsBroker
-from ormsgpack import packb, unpackb
-
-from pprint import pprint
-from zstd import compress
-
+from src.mirth.external.etcd import EtcdClient
 @inject
 async def command_start(
-    message: Message, dialog_manager: DialogManager, mediator: FromDishka[Mediator], broker: FromDishka[NatsBroker]
+    message: Message, dialog_manager: DialogManager, mediator: FromDishka[Mediator], etcd: FromDishka[EtcdClient]
 ) -> None:
-    user_transport = UserTransport(telegram_id=message.from_user.id)
-
-    request = await broker.request(
-        compress(
-            packb({"id": message.from_user.id, "name": "Mark"}), 
-        ), 
-        subject="test.user"
-    ) 
-    # TODO: replace this in application layer
-
-    pprint(request)
-
-    contract = UserExistsContract(telegram_id=12345)
-    result = await mediator.send(contract)
+    #await etcd.put("1213", "Mark") 
+    contract = UserExistsContract(telegram_id=message.from_user.id)
+    response = await mediator.send(contract)
+    print(response)
 
     await dialog_manager.start(state=MainMenu.START)
 
