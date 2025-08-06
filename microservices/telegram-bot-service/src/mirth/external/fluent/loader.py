@@ -2,12 +2,15 @@ from pathlib import Path
 
 from fluent.runtime import FluentLocalization, FluentResourceLoader
 
-from pprint import pprint
+from functools import cache
 
 
+@cache
 def get_locales() -> dict:
     current_dir = Path(__file__).resolve().parent
-    locale_path = current_dir.parent.parent / "entrypoints" / "telegram" / "resources" / "locales"
+    locale_path = (
+        current_dir.parent.parent / "entrypoints" / "telegram" / "resources" / "locales"
+    )
     iterdir = locale_path / "en"
 
     files = [entry.name for entry in iterdir.iterdir() if entry.is_file()]

@@ -17,7 +17,7 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-database-*.tar
+user_service-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/

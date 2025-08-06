@@ -6,6 +6,7 @@ from httpx import AsyncClient
 from src.mirth.external.settings import Settings
 from typing import AsyncIterable
 
+
 class EtcdProvider(Provider):
     @provide(scope=Scope.APP)
     async def get_etcd(self, settings: Settings) -> AsyncIterable[EtcdClient]:
@@ -13,4 +14,3 @@ class EtcdProvider(Provider):
         await client.connect()
         yield client
         await client.close()
-

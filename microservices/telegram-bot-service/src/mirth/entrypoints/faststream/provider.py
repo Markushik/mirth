@@ -6,6 +6,7 @@ from src.mirth.external.settings import Settings
 
 from typing import AsyncIterable
 
+
 class FaststreamProvider(Provider):
     @provide(scope=Scope.APP)
     async def get_broker(self, settings: Settings) -> AsyncIterable[NatsBroker]:

@@ -15,8 +15,6 @@ class UserExistsInteractor:
 
     async def __call__(self, contract: UserExistsContract) -> UserTransport:
         request = await self.broker.request(
-            compress(packb(contract)), 
-            subject="test.user"
+            compress(packb(contract)), subject="test.user"
         )
         return unpackb(request.body)
-

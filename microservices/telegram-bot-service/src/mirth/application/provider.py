@@ -5,6 +5,7 @@ from src.mirth.application.registry import setup_interactors
 
 from faststream.nats import NatsBroker
 
+
 class MediatorProvider(Provider):
     @provide(scope=Scope.APP)
     def get_mediator(self, broker: NatsBroker) -> Mediator:

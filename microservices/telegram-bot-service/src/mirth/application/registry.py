@@ -5,5 +5,6 @@ from src.mirth.application.contracts import UserExistsContract
 
 from faststream.nats import NatsBroker
 
+
 def setup_interactors(mediator: Mediator, broker: NatsBroker):
     mediator.register_interactor(UserExistsContract, UserExistsInteractor(broker))

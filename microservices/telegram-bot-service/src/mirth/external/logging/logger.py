@@ -2,7 +2,10 @@ import structlog
 import logging
 import sys
 
+from functools import cache
 
+
+@cache
 def get_logger():
     logging.basicConfig(
         format="%(message)s",

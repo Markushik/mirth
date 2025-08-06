@@ -1,6 +1,7 @@
 import httpx
 from typing import Optional, Dict, Any
 
+
 class EtcdClient:
     def __init__(self, url: str):
         self.base_url = url
@@ -18,12 +19,6 @@ class EtcdClient:
     async def put(self, key: str, value: str) -> Dict[str, Any]:
         if not self._client:
             await self.connect()
-        resp = await self._client.post(
-            "/kv/put",
-            json={
-                "key": key,
-                "value": value
-            }
-        )
+        resp = await self._client.post("/kv/put", json={"key": key, "value": value})
         resp.raise_for_status()
         return resp.json()

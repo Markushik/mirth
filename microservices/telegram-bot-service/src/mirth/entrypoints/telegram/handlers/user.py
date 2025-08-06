@@ -12,11 +12,16 @@ from src.mirth.application.mediator import Mediator
 from src.mirth.application.transport import UserTransport
 
 from src.mirth.external.etcd import EtcdClient
+
+
 @inject
 async def command_start(
-    message: Message, dialog_manager: DialogManager, mediator: FromDishka[Mediator], etcd: FromDishka[EtcdClient]
+    message: Message,
+    dialog_manager: DialogManager,
+    mediator: FromDishka[Mediator],
+    etcd: FromDishka[EtcdClient],
 ) -> None:
-    #await etcd.put("1213", "Mark") 
+    # await etcd.put("1213", "Mark")
     contract = UserExistsContract(telegram_id=message.from_user.id)
     response = await mediator.send(contract)
     print(response)

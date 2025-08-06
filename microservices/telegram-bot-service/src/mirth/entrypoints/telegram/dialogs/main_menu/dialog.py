@@ -7,11 +7,12 @@ from src.mirth.entrypoints.telegram.dialogs.auxiliary.fluent.format import Fluen
 from src.mirth.entrypoints.telegram.dialogs.main_menu.states import MainMenu
 from sulguk import SULGUK_PARSE_MODE
 
+
 def main_menu() -> Dialog:
     dialog = Dialog(
         Window(
             FluentFormat("hello-user"),
-            #Const(
+            # Const(
             #    """
             #    <ol start="10">
             #        <li>some item</li>
@@ -19,10 +20,10 @@ def main_menu() -> Dialog:
             #    </ol>
             #    <p>Some <b>text</b> in a paragraph</p>
             #    """
-            #),
-            Button(Const("Hello"), id="hello"),
+            # ),
+            Button(FluentFormat("profile"), id="profile"),
             state=MainMenu.START,
-            parse_mode=SULGUK_PARSE_MODE,
+            #parse_mode=SULGUK_PARSE_MODE,
         )
     )
     return dialog
